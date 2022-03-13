@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.QuestionDao">
+
+    <!--试题添加-->
+    <insert id="questionAdd">
+        insert into question(title,optionA,optionB,optionC,optionD,answer) value(#{title},#{optionA},#{optionB},#{optionC},#{optionD},#{answer})
+    </insert>
+
+    <!--查询所有语文试题-->
+    <select id="findAllQuestion" resultType="Question">
+        select * from question
+    </select>
+
+    <!--查询所有数学试题-->
+    <select id="findAllMathsQuestion" resultType="Question">
+        select * from mathsquestion
+    </select>
+
+    <!--删除试题信息-->
+    <delete id="deleteQuestion">
+        delete from question where questionId=#{questionId}
+    </delete>
+
+    <!--查询试题详细信息-->
+    <select id="findByIdQuestion" resultType="Question">
+        select * from question where questionId = #{questionId}
+    </select>
+
+    <!--修改试题信息-->
+    <update id="upDateQuestion">
+        update question set title=#{title}, optionA=#{optionA}, optionB=#{optionB}, optionC=#{optionC}, optionD=#{optionD}, answer=#{answer} where questionId=#{questionId}
+    </update>
+
+    <!--随机添加5道试题-->
+    <select id="findRandQuestion" resultType="Question">
+        select * from question order by rand() limit 0,5
+    </select>
+
+    <!--ajax搜索试题信息-->
+    <select id="queryQuestion" resultType="Question">
+        select * from question where questionId = #{questionId}
+    </select>
+
+    <!--记录考试记录-->
+    <insert id="examinationRecords">
+        insert into record () values (#{date},#{userName},#{score})
+    </insert>
+
+    <!--查询所有考试记录-->
+    <select id="recordAll" resultType="Record">
+        select date,userName,score from record
+    </select>
+
+    <!--查找个人的考试记录-->
+    <select id="queries" resultType="Record">
+        select date,userName,score from record where userName=#{userName}
+    </select>
+</mapper>

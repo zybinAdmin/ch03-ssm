@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/heml; charset=gb2312">
+    <title>在线考试系统</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body class="login_bg">
+<section class="loginBox">
+    <header class="loginHeader">
+        <h1>在线考试系统</h1>
+    </header>
+    <section class="loginCont">
+        <form class="loginForm" action="user/loginUser.do" method="post">
+            <div class="inputbox">
+                <span style="color:red;font-size: 16px">用户名、密码、身份错误,请重新登录</span><br>
+                <label for="user">用户名：</label>
+                <input id="user" type="text" name="userName" placeholder="请输入用户名" required/>
+
+            </div>
+            <div class="inputbox">
+                <label for="mima">密码：</label>
+                <input id="mima" type="password" name="password" placeholder="请输入密码" required/>
+            </div>
+            <div>
+                <label for="mima">身份：</label>
+                <input type="radio" name="identity" value="用户" checked>用户
+                <input type="radio" name="identity" value="管理">管理
+            </div>
+            <div class="subBtn">
+                <input type="submit" value="登录" />
+                <a href="userAdd.jsp"><input type="button" value="注册"/></a>
+            </div>
+        </form>
+    </section>
+</section>
+
+</body>
+</html>

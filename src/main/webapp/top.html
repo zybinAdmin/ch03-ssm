@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/heml; charset=gb2312">
+    <title>在线考试系统</title>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+<header class="publicHeader">
+    <h1>在线考试系统</h1>
+    <div class="publicHeaderR">
+        <p><span>你好</span><span style="color: #fff21b"></span> , 欢迎你！</p>
+    </div>
+</header>
+<section class="publicTime">
+    <span id="time">2015年1月1日 11:11  星期一</span>
+</section>
+<div class="right">
+    <!--<img class="wColck" src="img/clock.jpg" alt=""/>-->
+    <div class="wFont">
+        <span id="hours"></span>
+    </div>
+</div>
+<footer class="footer">
+</footer>
+<!--<script type="text/javascript" src="js/time.js"  charset="UTF-8"></script>-->
+<script type="text/javascript">
+    function fn(){
+        var time = new Date();
+        var str= "";
+        var div = document.getElementById("time");
+        var hour = document.getElementById("hours");
+//    console.log(time);
+        var year = time.getFullYear();
+        var mon = time.getMonth()+1;
+        var day = time.getDate();
+        var h = time.getHours();
+        var m = time.getMinutes();
+        var s = time.getSeconds();
+        var week = time.getDay();
+        switch (week){
+            case 0:week="日";
+                break;
+            case 1:week="一";
+                break;
+            case 2:week="二";
+                break;
+            case 3:week="三";
+                break;
+            case 4:week="四";
+                break;
+            case 5:week="五";
+                break;
+            case 6:week="六";
+                break;
+        }
+        str = year +"年"+totwo(mon)+"月"+totwo(day)+"日"+"&nbsp;"+totwo(h)+":"+totwo(m)+":"+totwo(s)+"&nbsp;"+"星期"+week;
+        div.innerHTML = str;
+    }
+    fn();
+    setInterval(fn,1000);
+    function totwo(n){
+        if(n<=9){
+            return n = "0"+n;
+        }
+        else{
+            return n =""+n;
+        }
+    }
+</script>
+</body>
+</html>
