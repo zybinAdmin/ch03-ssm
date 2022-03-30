@@ -20,5 +20,6 @@
     </bean>
 
     <!--注解驱动-->
+    <!--ajax-->
     <mvc:annotation-driven/>
 </beans>

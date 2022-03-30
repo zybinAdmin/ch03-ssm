@@ -1,4 +1,4 @@
-<%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.test.domain.Question" %>
 <%@ page import="java.util.ArrayList" %><%--
@@ -75,7 +75,7 @@
                 </tr>
 
                 <tbody id="info" style="text-align: center">
-                <C:forEach var="question" items="${questionList}">
+                <c:forEach var="question" items="${questionList}">
                 <tr>
                     <td>${question.questionId}</td>
                     <td>${question.title}</td>
@@ -93,7 +93,7 @@
                         </a>
                     </td>
                 </tr>
-                </C:forEach>
+                </c:forEach>
                 </tbody>
             </table>
         </div>

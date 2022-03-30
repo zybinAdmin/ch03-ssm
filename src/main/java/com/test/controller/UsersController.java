@@ -110,6 +110,7 @@ public class UsersController {
 
         //搜索用户的信息
         @RequestMapping("/queryUser.do")
+        //ajax的注解，代替了响应的代码
         @ResponseBody()
         public Users queryUsers(String userName){
             Users users = service.queryUser(userName);
